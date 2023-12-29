@@ -135,11 +135,17 @@ export default {
             ramsMap[v.username] = v.mintcount;
           });
           this.ramList = data.map((v, index) => {
+            let showRamNum = v[1] / 1024 / 1024;
+            if (showRamNum >= 1024) {
+              showRamNum = `${(showRamNum / 1024).toFixed(2)} GB`;
+            } else {
+              showRamNum = `${showRamNum.toFixed(2)} MB`;
+            }
             return {
               index: index + 1,
               username: v[0],
-              ram: `${(v[1] / 1024 / 1024).toFixed(2)} MB`,
-              rams: ramsMap[v[0]] || ''
+              ram: showRamNum,
+              rams: ramsMap[v[0]] || "",
             };
           });
         })
