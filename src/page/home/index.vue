@@ -206,7 +206,9 @@ export default {
 
 <style scoped>
 .container {
+  min-height: 100vh;
   background: linear-gradient(135deg, #fff5d9, #fffdf8);
+  padding-bottom: 40px;
 }
 .header {
   height: 1px;
@@ -237,6 +239,13 @@ export default {
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 0.5px,
     rgba(0, 0, 0, 0.024) 0px 0px 5px, rgba(0, 0, 0, 0.05) 0px 1px 2px;
+}
+
+::v-deep .ant-tabs-bar {
+  margin-bottom: 0;
+}
+::v-deep .ant-table-small {
+  border: none;
 }
 
 @media screen and (max-width: 640px) {
